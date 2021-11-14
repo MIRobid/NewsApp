@@ -54,6 +54,10 @@ public class NewsAdapter extends ArrayAdapter<News> {
         String formattedTime = currentNews.getDate().substring(11,19);
         timeView.setText(formattedTime);
 
+        TextView authorTextView = listItemView.findViewById(R.id.author_text_view);
+        String originalAuthor = "by "+currentNews.getAuthor();
+        authorTextView.setText(originalAuthor);
+
         // Set the proper background color
         Drawable newsBackground = listItemView.getBackground();
         // Get the appropriate background color based on the current news section

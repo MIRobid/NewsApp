@@ -116,12 +116,11 @@ public class QueryUtils {
     }
 
     /**
-     * Return an {@link List<News>} object by parsing out information
-     * about the first earthquake from the input earthquakeJSON string.
+     * Return an {@link List<News>} object by parsing news
      */
-    private static List<News> extractFeatureFromJson(String earthquakeJSON) {
+    private static List<News> extractFeatureFromJson(String newsJSON) {
         // If the JSON string is empty or null, then return early.
-        if (TextUtils.isEmpty(earthquakeJSON)) {
+        if (TextUtils.isEmpty(newsJSON)) {
             return null;
         }
 
@@ -129,7 +128,7 @@ public class QueryUtils {
 
         try {
             // Create a JSONObject from the JSON response string
-            JSONObject baseJsonResponse = new JSONObject(earthquakeJSON);
+            JSONObject baseJsonResponse = new JSONObject(newsJSON);
             JSONObject responseJsonObject = baseJsonResponse.getJSONObject("response");
             JSONArray featureArray = responseJsonObject.getJSONArray("results");
 
@@ -145,12 +144,14 @@ public class QueryUtils {
                 String date = properties.getString("webPublicationDate");
                 // Extract the value for the key called "url"
                 String url = properties.getString("webUrl");
+                // Extract the value for the key called "tags"
+                JSONArray tagArray = properties.getJSONArray("tags");
+                JSONObject author = tagArray.getJSONObject(0);
+                String authorName = author.getString("webTitle");
 
-                // Create a new {@link Earthquake} object with the magnitude, location, time,
-                // and url from the JSON response.
-                News news = new News(title, section, date, url);
+                News news = new News(title, section, date, url, authorName);
 
-                // Add the new {@link Earthquake} to the list of earthquakes.
+                // Add the new {@link News} to the list of news.
                 newsList.add(news);
             }
         } catch (JSONException e) {

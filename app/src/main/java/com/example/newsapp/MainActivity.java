@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         // Append query parameter and its value
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
         uriBuilder.appendQueryParameter("api-key", "f6c70dcc-018b-4c23-bd5a-04333c395634");
 
         // Return the completed uri
