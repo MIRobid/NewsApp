@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="textColorNewsDetails">#80000000</color>
+    <color name="textColorNewsTitle">#2B3D4D</color>
+
+    <color name="s1">#344A7BA7</color>
+    <color name="s2">#3304B4B3</color>
+    <color name="s3">#3310CAC9</color>
+    <color name="s4">#33F5A623</color>
+    <color name="s5">#33FF7D50</color>
+    <color name="s6">#33FC6644</color>
+    <color name="s7">#33E75F40</color>
+    <color name="s8">#33E13A20</color>
+    <color name="s9">#33D93218</color>
+    <color name="s10plus">#33C03823</color>
+</resources>
